@@ -7,7 +7,8 @@ Feature: Products add to cart flow
     And user added 4 products to the cart
     And user navigated to the cart
     And cart contains correct products
-
+    When user removes product from the cart
+    Then cart is empty
 
     Examples:
       | make | model              | engine                  |

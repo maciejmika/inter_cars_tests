@@ -36,7 +36,6 @@ public class StepDefinitions {
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("start-maximized");
-//        chromeOptions.setHeadless(true);
         driver = new ChromeDriver(chromeOptions);
         pageObject = new PageObject(driver);
         mainPage = new MainPage(driver);
@@ -82,7 +81,7 @@ public class StepDefinitions {
         assert (productTitleInCart).contains(productIndex);
     }
 
-    @When("user removed product from the cart")
+    @When("user removes product from the cart")
     public void removeProductFromCart() {
         cartPage.waitUntilElementIsClickable(cartPage.trashButton).click();
     }
